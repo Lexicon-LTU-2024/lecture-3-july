@@ -56,3 +56,61 @@
 
 // ########## Arrays ##########
 
+const sports = ["Football", "Handboll", "Basketball", "Tennis"];
+// console.log(sports);
+
+// console.log(sports[0]); // "Football"
+// sports[0] = "Soccer";
+// console.log(sports[0]); // "Soccer"
+
+// sports.push("Hockey"); // Add the new element to the end of the array.
+// console.log(sports);
+
+// const removedElement = sports.pop(); // Remove the last element from the array.
+// console.log(sports);
+// console.log(removedElement);
+
+// console.log(sports.length);
+
+// ########## Array Methods ##########
+
+// sports.forEach(function (element) {
+//   console.log(element);
+// });
+
+// const doesSoccerExist = sports.includes("Soccer");
+// console.log(doesSoccerExist);
+
+// const indexOfTennis = sports.indexOf("Tennis");
+// console.log(indexOfTennis);
+
+// const fewSports = sports.slice(1, 6);
+// console.log(fewSports);
+
+// console.log(sports);
+// const deletedElements = sports.splice(2, 1, "Curling");
+// console.log(sports);
+
+// const numbers = [1, 2, 3, 4, 5];
+// const numbersDoubled = numbers.map(function (number) {
+//   if (number === 4) {
+//     return number;
+//   }
+
+//   return number * 2;
+// });
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(numbersDoubled); // [2, 3, 6, 4, 10]
+
+// const numbers = [1, 23, 55, 62, 34, 99];
+
+const filteredNumbers = numbers.filter(function (number) {
+  if (number > 50) {
+    return false;
+  }
+
+  return true;
+});
+
+console.log(filteredNumbers);

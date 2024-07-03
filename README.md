@@ -33,9 +33,13 @@ _( for .Net developers)_
     - [var](#var)
 
   - [Object](#object)
+
     - [Objects](#objects)
     - [Arrays](#arrays)
+
       - [Array Methods](#array-methods)
+
+  - [Functions](#functions)
 
 </details>
 
@@ -274,34 +278,144 @@ In JavaScript, arrays are a special type of object that are used to store collec
 
 Basic example:
 
+```js
+const sports = ["Football", "Handboll", "Basketball", "Tennis"];
+
+console.log(sports);
+```
+
+You can access and manipulate elements in an array using their index.
+
+```js
+console.log(sports[0]); // "Football"
+
+sports[0] = "Soccer"; // Modify first element in array
+
+sports.push("Hockey"); // Add the new element to the end of the array.
+
+sports.pop(); // Remove the last element from the array.
+
+console.log(sports.length); // Get the number of elements in the array
+```
+
 ##### Array Methods
 
 Arrays also come with many useful methods for iteration, transformation, and searching. These methods are simply called "array-methods":
 
 **push()** => number _( the new length of the array )_
 
+    Add a new element to the end of the array.
+
 **pop()** => the removed element _( undefined if empty )_
+
+    Remove the last element from the array
 
 **unshift()** => number _( the new length of the array )_
 
+    Add a new element to the beginning of the array.
+
 **shift()** => the removed element _( undefined if empty )_
+
+    Remove the first element from the array
 
 **forEach( callback(element, index?) )** => void
 
+ForEach is just an array method that loops through the array and returns nothing.
+
+A callback function is just a normal function that is used as an argument _( parameter )_.
+
+```js
+sports.forEach(function (element) {
+  console.log(element);
+
+  // In each iteration we have access to the current element that is iterated over.
+});
+```
+
 **includes( searchElement )** => boolean
+
+Check wheater an element exists or not in the array.
+
+```js
+const doesSoccerExist = sports.includes("Soccer");
+console.log(doesSoccerExist);
+```
 
 **indexOf( searchElement )** => The first index of searchElement in the array. -1 if not found.
 
-**slice( start, end)** => a new array containing extracted elements
+Search for the index of the element in question.
+
+```js
+const indexOfTennis = sports.indexOf("Tennis");
+console.log(indexOfTennis);
+```
+
+**slice( start, end )** => a new array containing extracted elements
+
+Is used to extract subarrays from an existing array. It includes the start index but EXCLUDES the end index.
+
+```js
+const fewSports = sports.slice(1, 3);
+console.log(fewSports);
+```
 
 **splice( start, deleteCount?, item1?, item2?, itemN?... )** => a new array containing the removed elements
 
+Is used to further manipulate the content of an array, including deleting and adding elements, all in one go.
+
+```js
+console.log(sports);
+
+// Let's remove the element on index position 2 and and the element "Curling" on that position.
+
+const deletedElements = sports.splice(2, 1, "Curling");
+console.log(sports);
+```
+
 **map( callback(element, index?) )** => A new array with each element being the result of the callback function.
 
+This function is used to modify elements inside an array. The result will be returned in a new array. Every iteration must return a new value/element OR the orginal value/element.
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+const numbersDoubled = numbers.map(function (number) {
+  if (number === 4) {
+    return number;
+  }
+
+  return number * 2;
+});
+
+console.log(numbers); // [1, 2, 3, 4, 5]
+console.log(numbersDoubled); // [2, 3, 6, 8, 10]
+```
+
 **filter( callback(element, index?) )** => A shallow copy of the given array containing just the elements that pass the test. If no elements pass the test, an empty array is returned.
+
+The callack functions is the check here, it must return true or false. If it's true, the element will remain in the array. If it's false it will be filtered away.
+
+```js
+const numbers = [1, 23, 55, 62, 34, 99];
+
+const filteredNumbers = numbers.filter(function (number) {
+  if (number > 50) {
+    return false;
+  }
+
+  return true;
+});
+
+console.log(filteredNumbers);
+```
 
 This was just a few examples of array methods, but as you can see, arrays in JavaScript are powerful and versatile, making it easy to handle lists and collections of data efficiently. They are essential tools for any JavaScript developer and can be used in a wide variety of programming tasks.
 
 [Link to complete list of array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 [Back to top](#intro-to-javascript)
+
+### Functions
+
+[Back to top](#intro-to-javascript)
+
+
