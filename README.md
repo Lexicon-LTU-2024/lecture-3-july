@@ -416,6 +416,62 @@ This was just a few examples of array methods, but as you can see, arrays in Jav
 
 ### Functions
 
+A function is a reusable block of code designed to perform a particular task. Functions can be defined in several ways and can accept parameters and return values.
+
+#### With the `function` keyword
+
+```js
+function greet(name) {
+  console.log(`Hello ${name}!`);
+}
+
+// The above function has no return value, which means it will return undefined "in the background".
+
+function add(a, b) {
+  return a + b;
+}
+```
+
+These functions are always "hoisted" which means they are always available, even before the row on which they are created.
+
+#### Function Expression
+
+A function can also be defined using a function expression. This involves assigning a function to a variable
+
+```js
+const multiply = function (a, b) {
+  return a * b;
+};
+```
+
+#### Arrow functions
+
+Arrow functions provide a shorter syntax for writing functions in JavaScript. They are particularly useful for writing concise, one-line and callback functions.
+
+```js
+// With normal function syntax
+const divide = function (a, b) {
+  return a / b;
+};
+
+// With arrow syntax
+const divide = (a, b) => {
+  return a / b;
+};
+
+// If the return value is very simple, then one-line arrow function
+const divide = (a, b) => a / b;
+```
+
+### The most common use case for arrow functions
+
+#### As a callback functions
+
+```js
+const numbers = [1, 4, 6, 234, 44, 430];
+
+const doubleNumbers = numbers.map((number) => number * 2);
+const filteredNumbers = numbers.filter((number) => number < 50);
+```
+
 [Back to top](#intro-to-javascript)
-
-
