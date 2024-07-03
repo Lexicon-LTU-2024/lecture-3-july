@@ -136,13 +136,37 @@ Primitive types are much simplier in JavaScript, it only exist a few of them rea
 
 #### Number
 
+The number type encompasses all the different number related types in C#. It's a double precision 64 bit value, which gives it the equvivalence of a double in C#.
+
+`1, 2, 3, 100, 3.14, -564, 673498374`
+
 #### String
+
+Exactly the same as `string` in C#, but single quotes, double quotes and backticks are allowed.
+
+Single quotes: `'Niklas'`
+
+Double quotes: `"Dimitris"`
+
+Backticks
+
+```
+`Marcus`
+```
 
 #### Boolean
 
+Exactly the same as C#
+
+`true, false`
+
 #### Null
 
+Exactly the same as `null` in C#. Used when we explicitly set a variable with no value.
+
 #### Undefined
+
+For variables that have not yet been defined.
 
 [Back to top](#intro-to-javascript)
 
