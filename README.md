@@ -178,7 +178,34 @@ In C# variables must be declared with a specific type _( and it can't be change 
 
 #### let
 
+`let` is a block-scoped variable that is used when we want to create a variabel that we might need to update during the life time of our application.
+
+```js
+let firstName = "Niklas";
+
+//..later in the code
+
+firstName = "Dimitiris";
+firstName = `Marcus`;
+
+console.log(firstName); // "Marcus"
+
+// We can always change type and value of a let variable.
+firstName = true;
+console.log(firstName);
+```
+
 #### const
+
+`const` is also a block-scoped variable, but we can't change the value of it later in the code. It's simply a constant.
+
+```js
+const birthYear = 1990;
+
+// ..later in the code
+
+birthYear = 1995; // The browser won't allow it.
+```
 
 #### var
 
