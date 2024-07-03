@@ -209,6 +209,10 @@ birthYear = 1995; // The browser won't allow it.
 
 #### var
 
+`var` is function-scoped in JavaScript and that's a little bit harder to explain then block-scoped. In this course we should not use it, and I will be angry if you do!
+
+_TODO: Add link to documentation_
+
 [Back to top](#intro-to-javascript)
 
 ### Object
@@ -217,9 +221,50 @@ You might have heard that everything in JavaScript is an object but that's not r
 
 [Back to top](#intro-to-javascript)
 
-#### Objects
+#### Objects _( object literals )_
 
 The fundamental building blocks in JavaScript. An object is a collection of key-value pairs. Much like a `Dictionary` in C# but objects are way more dynamic.
+
+```js
+const person = {
+  name: "Niklas",
+  proffesion: "Developer",
+  age: 33,
+  sports: ["Football", "Handboll"],
+  certified: true,
+  sayHi: function () {
+    console.log(`Hi, my name is ${this.name}`);
+  },
+};
+
+console.log(person);
+```
+
+As you can see, we can put basically anything inside an object! How do we use the object then?
+
+```js
+console.log(person.name); // "Niklas", dot-notation to access
+
+console.log(person["proffesion"]); // "Developer", alternative way to access. ( bracket-notation )
+
+person.name = "Henrik"; // Modify existing property.
+person["age"] = 30; // Alternative way of modifying.
+
+person.children = 3; // Out of the blu, just add a new property.
+
+person.sayHi(); // Invoke the function
+
+delete person.sports; // Remove property.
+```
+
+You can also loop through an object in Javascript. Remember to use a `for..in-loop`. There also exist an `for..of-loop` but that's for arrays.
+
+```js
+for (const key in person) {
+  console.log(person.[key]);
+  // Need to use bracket notation to acces dynamic properties dynamically.
+}
+```
 
 [Back to top](#intro-to-javascript)
 
